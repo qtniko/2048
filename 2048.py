@@ -1,5 +1,6 @@
 import tkinter as tk
 import random
+from typing import KeysView
 
 root = tk.Tk()
 root.title('2048')
@@ -192,6 +193,11 @@ def keypress(key):
     if key.keysym == 'Right': right()
     if key.keysym == 'Left': left()
 
+    if key.keysym == 's': down()
+    if key.keysym == 'w': up()
+    if key.keysym == 'd': right()
+    if key.keysym == 'a': left()
+
 tile_1 = tile(1, 1)
 tile_2 = tile(1, 2)
 tile_3 = tile(1, 3)
@@ -228,13 +234,20 @@ score_display = tk.Label(
 score_display.pack(fill=tk.BOTH, expand=True)
 
 for t in tiles:
-    empty_tiles.append(t)
+     empty_tiles.append(t)
 genSwitch.append('uwu')
 generate()
 for t in tiles:
     empty_tiles.append(t)
 genSwitch.append('owo')
 generate()
+
+#c=0
+#for i in tiles:
+#    i.value=2**c
+#    i.label['text']=str(2**c)
+#    i.label['bg']=colors[c]
+#    c+=1
 
 board.pack(padx=5, pady=5, fill=tk.BOTH, expand=True)
 panel.pack(padx=5, pady=5, fill=tk.BOTH)
