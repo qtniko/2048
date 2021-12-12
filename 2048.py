@@ -37,7 +37,6 @@ colors = [
     'mediumturquoise'
 ]
 tiles = []
-unlocked_tiles = []
 empty_tiles = []
 genSwitch = []
 weight = [4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
@@ -61,16 +60,9 @@ class tile:
         tiles.append(self)
 
 def end():
-    for x in range(4):
-        x+=1
-        for y in range(4):
-            y+=1
-            for tile1 in tiles:
-                if tile1.x == x and tile1.y == y:
-                    if tile1.value == 0:
-                        unlocked_tiles.append(tile1)
-                        empty_tiles.append(tile1)
     for tile in tiles:
+        if tile.value == 0:
+            empty_tiles.append(tile)
         tile.mergable = True
     generate()
 
