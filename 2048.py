@@ -1,6 +1,5 @@
 import tkinter as tk
 import random
-from typing import KeysView
 
 root = tk.Tk()
 root.title('2048')
